@@ -20,14 +20,14 @@ enum layers {
 #define DEAD_ROW XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 #define HOME_MODS_L KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX
 #define HOME_MODS_R XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI
-#define THUMBS KC_ESC, KC_TAB, KC_SPC, KC_BSPC, KC_ENT, KC_DEL
+#define THUMBS KC_ESC, KC_SPC, KC_TAB, KC_BSPC, KC_ENT, KC_DEL
 #define LAYOUT_wrapper(...) LAYOUT_split_3x5_3(__VA_ARGS__)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_wrapper(
         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-        LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G,    KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), RGUI_T(KC_QUOT),
+        KC_A, LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G,    KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_QUOT,
         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
                                     ESC_MED, TAB_MOUSE, SPC_NAV, BSP_NUM, ENT_SYM, DEL_FUN
     ),
@@ -57,21 +57,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LBRC, KC_7, KC_8, KC_9, KC_RBRC,                              DEAD_ROW,
         KC_SCLN, KC_4, KC_5, KC_6, KC_EQL,                               HOME_MODS_R,
         KC_GRV,  KC_1, KC_2, KC_3, KC_BSLS,                             DEAD_ROW,
-                                    KC_ESC, KC_TAB, KC_SPC, KC_BSPC, KC_ENT, KC_DEL
+                                    KC_ESC, KC_SPC, KC_TAB, KC_BSPC, KC_ENT, KC_DEL
     ),
 
     [SYM] = LAYOUT_wrapper(
         KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR,                     DEAD_ROW,
         KC_COLN,  KC_DLR, KC_PERC, KC_CIRC, KC_PLUS,                     HOME_MODS_R,
         KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE,                     DEAD_ROW,
-                                    KC_ESC, KC_TAB, KC_SPC, KC_LPRN, KC_RPRN, KC_DEL
+                                    KC_ESC, KC_SPC, KC_TAB, KC_LPRN, KC_RPRN, KC_DEL
     ),
 
     [FUN] = LAYOUT_wrapper(
         DEAD_ROW,                                                        KC_PSCR, KC_F7, KC_F8, KC_F9, KC_F12,
         HOME_MODS_L,                                                     KC_SCRL, KC_F4, KC_F5, KC_F6, KC_F11,
         DEAD_ROW,                                                        KC_PAUS, KC_F1, KC_F2, KC_F3, KC_F10,
-                                    KC_ESC, KC_TAB, KC_SPC, KC_BSPC, KC_ENT, KC_DEL
+                                    KC_ESC, KC_SPC, KC_TAB, KC_BSPC, KC_ENT, KC_DEL
     ),
 };
 // clang-format on
